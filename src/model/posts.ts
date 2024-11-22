@@ -1,7 +1,11 @@
-import getDbConnection from '../database/database'
+import getDB from '../database/database'
 
-export default async function findPosts() {
-  const dbConnection = await getDbConnection()
-  const db = dbConnection.db('instabytes')
+export async function findPosts() {
+  const db = await getDB()
   return db.collection('posts').find().toArray()
+}
+
+export async function insertPost(post: unknown) {
+  const db = await getDB()
+  // return db.collection('posts').insertOne(post)
 }
