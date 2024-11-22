@@ -3,7 +3,7 @@ dotenv.config()
 
 import express, { Application, Request, Response } from 'express'
 import { MongoClient } from 'mongodb'
-import connectToDatabase from './database'
+import connectToDatabase from './database/database'
 
 const app: Application = express()
 const port = process.env.PORT || 3000
