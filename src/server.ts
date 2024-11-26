@@ -1,11 +1,13 @@
 import 'dotenv/config'
 
+import cors from 'cors'
 import express, { Application, Response } from 'express'
 import routes from './routes/posts'
 
 const app: Application = express()
 const port = process.env.PORT || 3000
 
+app.use(cors())
 app.use(express.json())
 app.use(express.static('uploads'))
 
