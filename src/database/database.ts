@@ -6,7 +6,6 @@ let database: Db | null = null
 async function connectToDatabase(connectionString: string = process.env.MONGO_URI as string) {
   if (mongoClient) return mongoClient
   try {
-    console.log('Connection string: ' + connectionString)
     mongoClient = new MongoClient(connectionString)
     console.log('Connecting to database cluster...')
     await mongoClient.connect()
